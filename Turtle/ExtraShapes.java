@@ -18,7 +18,10 @@ public class ExtraShapes
        if(filled) {
            while(length>0) {
                turtle.forward(1);
-               length = length-1;
+               turtle.turn(270);
+               turtle.forward(1);
+               turtle.turn(90);
+               length = length-2;
                doPolygon(side, length, turtle);
             }
         }
