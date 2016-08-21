@@ -10,6 +10,6 @@ public class TurtleWorld
         turtle.penDown();
         //turtle.forward(50);
         //ExtraShapes.drawSquare(100,false,turtle);
-        ExtraShapes.drawPolygon(4,30,false,turtle);
+        ExtraShapes.drawPolygon(3,60,true,turtle);
     }
 }
