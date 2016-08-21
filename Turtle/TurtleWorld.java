@@ -8,6 +8,8 @@ public class TurtleWorld
         Turtle turtle = new Turtle(turtleWorld);
         turtle.setPenColor(Color.RED);
         turtle.penDown();
-        turtle.forward(50);
+        //turtle.forward(50);
+        //ExtraShapes.drawSquare(100,false,turtle);
+        ExtraShapes.drawPolygon(4,30,false,turtle);
     }
 }
