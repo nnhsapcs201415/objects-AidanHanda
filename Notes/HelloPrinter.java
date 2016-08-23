@@ -7,6 +7,8 @@
  * @version (a version number or a date)
  */
 
+import java.util.List;
+import java.util.ArrayList;
 // this line declares the class HelloPrinter
 public class HelloPrinter
 {
@@ -30,7 +32,7 @@ public class HelloPrinter
         
         //identifiers are case sensitive
         // These identifiers are all different
-        String box, BOX, box;
+        String box, BOX, Box;
         
         //There are conventions for identifiers (not rules)
         // Classes start with an uppercase letter
@@ -40,5 +42,30 @@ public class HelloPrinter
         int SPEED_OF_LIGHT = 300000000;
         String firstName = "Aidan";
         
+        //System.ou.println( "Hello World" );
+        
+        /*
+         * This is a run-time error. (The program generates the error when it is executed.)
+         * More specifically, this is a ogical error. (The Program
+         * doesnt crash but it doesnt work as expected)
+         */
+        
+        System.out.println( "Hello, World" );
+        
+        /*
+         * This is also a run-time error. More specifically, it is an execption. The program 
+         * crashes in general.
+         * 
+         */
+        
+        //System.out.println( 1/0 );
+        
+//         testThreading test1 = new testThreading("Thread1");
+//         testThreading test2 = new testThreading("Thread2");
+//         test1.start();
+//         test2.start();
+
+
+
     }
 }
