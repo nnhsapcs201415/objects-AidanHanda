@@ -9,7 +9,9 @@
 public class MultiThreading implements Runnable
 {
     Thread thethread;
-    MultiThreading() {
+    int startWide = 0;
+    MultiThreading(int start) {
+        startWide = start;
         thethread = new Thread(this,"multithreadingthread");
         System.out.println("Thread created");
         thethread.start();
@@ -17,7 +19,7 @@ public class MultiThreading implements Runnable
     
     public void run() {
         try{
-            for(int counter = 0; counter<100; counter++) {
+            for(int counter = startWide; counter>-1; counter++) {
                 System.out.println(counter);
                 Thread.sleep(1000);
             }
