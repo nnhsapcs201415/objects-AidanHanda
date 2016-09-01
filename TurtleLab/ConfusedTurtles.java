@@ -9,13 +9,14 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.Color;
+import java.util.Random;
 public class ConfusedTurtles
 {
 
     public static void main(String[] args) {
         World turtleWorld = new World(1920,1080);
-        funWithTurtles(45,1500,turtleWorld);
-        //funWithTurtles(135,1000,turtleWorld);
+        funWithTurtles(45,1000,turtleWorld);
+        //funWithTurtles(0,1000,turtleWorld);
         //funWithTurtles(225,1000,turtleWorld);
         //funWithTurtles(315,1000,turtleWorld);
     }
@@ -35,17 +36,15 @@ public class ConfusedTurtles
         }
         for(int indexTurtles = 0; indexTurtles < numTurtles; indexTurtles++) {
             Turtle workingTurtle = turtles.get(indexTurtles);
-            int colorSafe = indexTurtles%255;
-
-            //turtles.get(indexTurtles).setPenWidth(indexTurtles/10);
-
             workingTurtle.setPenColor(rainbowColor(numTurtles,indexTurtles));
             workingTurtle.penDown();
 
             for(int penWidthCalc = 1; penWidthCalc < numTurtles - indexTurtles; penWidthCalc++) {
-                if(penWidthCalc%10 == 0) workingTurtle.setPenWidth(penWidthCalc/10);
-                workingTurtle.turn(indexTurtles);
-                workingTurtle.forward(2);
+                if(penWidthCalc%100 == 0) workingTurtle.setPenWidth((numTurtles - indexTurtles - penWidthCalc)/10);
+                Random forwardRandom = new Random();
+                workingTurtle.turn(indexTurtles+penWidthCalc+forwardRandom.nextInt(60));
+                //workingTurtle.forward(forwardRandom.nextInt(3));
+                ExtraShapes.drawPolygon(3,forwardRandom.nextInt(3)+5,false,workingTurtle);
             }
             //workingTurtle.forward(numTurtles - indexTurtles);
             workingTurtle.hide();
